@@ -18,7 +18,7 @@
         <attach.version>4.0.9</attach.version>
         <connect.version>2.0.1</connect.version>
         <javafx.maven.plugin.version>0.0.4</javafx.maven.plugin.version>
-        <client.maven.plugin.version>0.1.35</client.maven.plugin.version>
+        <client.maven.plugin.version>0.1.36-SNAPSHOT</client.maven.plugin.version>
         <main.class>com.gluonhq.hello.HelloGluonApp</main.class>
     </properties>
 
@@ -66,6 +66,13 @@
             <url>https://nexus.gluonhq.com/nexus/content/repositories/releases</url>
         </repository>
     </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>snapshots</id>
+            <url>http://oss.sonatype.org/content/repositories/snapshots</url>
+        </pluginRepository>
+    </pluginRepositories>
 
     <build>
         <plugins>
@@ -156,6 +163,12 @@
             <id>android</id>
             <properties>
                 <client.target>android</client.target>
+            </properties>
+        </profile>
+        <profile>
+            <id>linux-aarch64</id>
+            <properties>
+                <client.target>linux-aarch64</client.target>
             </properties>
         </profile>
     </profiles>
