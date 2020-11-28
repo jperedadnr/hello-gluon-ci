@@ -2,7 +2,7 @@ name: LinuxAArch64
 
 on:
   push:
-    branches: [ master ]
+    branches: [ '*' ]
 
 jobs:
   build:
@@ -28,13 +28,6 @@ jobs:
         uses: gluonhq/gluon-build-license@v1
         with:
           gluon-license: ${{ secrets.GLUON_LICENSE }}
-
-      - name: Install SYSROOT (Linux)
-        run: |
-          mkdir -p sysroot && cd sysroot
-          wget "https://download2.gluonhq.com/substrate/aarch64sysroot.zip"
-          unzip aarch64sysroot.zip
-
 
       - name: Gluon Build
         run: mvn -Plinux-aarch64 client:build client:package
