@@ -35,7 +35,7 @@ jobs:
           GRAALVM_HOME: ${{ env.JAVA_HOME }}
 
       - name: Tar native client to staging
-        run: tar -C target/client/aarch64-linux -cvf staging/HelloGluon.tar HelloGluon*
+        run: tar -C target/client/aarch64-linux -cvf staging/HelloGluon.tar HelloGluon
 
       - name: Upload
         uses: actions/upload-artifact@v2
