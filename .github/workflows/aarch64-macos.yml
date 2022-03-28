@@ -6,7 +6,7 @@ on:
 jobs:
   build:
     name: macOS on M1
-    runs-on: [self-hosted, macOS, ARM64]
+    runs-on: [self-hosted, macOS, X64]
     defaults:
       run:
         shell: "/usr/bin/arch -arch arm64e /bin/bash -l {0}"
